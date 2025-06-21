@@ -1,0 +1,4 @@
+*.lua text eol=lf
+*.json text eol=lf
+*.vim text eol=lf
+.gitattributes text eol=lf
