@@ -75,7 +75,6 @@ return {
           "ts_ls",
           "marksman",
           "emmet_ls",
-          "powershell_es",
         },
       })
 
