@@ -22,7 +22,7 @@ return {
             cwd = vim.fn.getcwd(),
             sourceMaps = true,
             protocol = "inspector",
-            runtimeExecutable = os.getenv("HOME") .. "/usr/bin/chromium-browser",
+            runtimeExecutable = os.getenv("HOME") .. "/usr/bin/chromium",
             port = 9222,
             webRoot = "${workspaceFolder}",
           },
