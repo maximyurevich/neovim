@@ -15,7 +15,7 @@ return {
       for _, language in ipairs({ "javascript", "typescript", "javascriptreact", "typescriptreact" }) do
         dap.configurations[language] = {
           {
-            name = "Chromium: Attach",
+            name = "Brave: Attach",
             type = "chrome",
             request = "attach",
             program = "${file}",
@@ -23,7 +23,7 @@ return {
             sourceMaps = true,
             protocol = "inspector",
             runtimeExecutable = os.getenv("HOME")
-              .. "/AppData/Local/Chromium/Application/chrome.exe",
+              .. "/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe",
             port = 9222,
             webRoot = "${workspaceFolder}",
           },
