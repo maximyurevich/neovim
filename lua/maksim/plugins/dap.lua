@@ -15,14 +15,14 @@ return {
       for _, language in ipairs({ "javascript", "typescript", "javascriptreact", "typescriptreact" }) do
         dap.configurations[language] = {
           {
-            name = "Chromium: Attach",
+            name = "Brave: Attach",
             type = "chrome",
             request = "attach",
             program = "${file}",
             cwd = vim.fn.getcwd(),
             sourceMaps = true,
             protocol = "inspector",
-            runtimeExecutable = "/usr/bin/ungoogled-chromium",
+            runtimeExecutable = "/usr/bin/brave-browser",
             port = 9222,
             webRoot = "${workspaceFolder}",
           },
