@@ -39,6 +39,9 @@ return {
           "javascript",
           "typescript",
           "gitignore",
+          "json",
+          "toml",
+          "yaml",
         },
         indent = {
           enable = true,
