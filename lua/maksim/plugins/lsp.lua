@@ -80,8 +80,22 @@ return {
           "ts_ls",
           "marksman",
           "emmet_ls",
-          "powershell_es",
+          "bashls",
+          "ruby_lsp",
+          "fish_lsp",
         },
+      })
+
+      vim.lsp.config("bashls", {
+        capabilities = capabilities,
+      })
+
+      vim.lsp.config("ruby_lsp", {
+        capabilities = capabilities,
+      })
+
+      vim.lsp.config("fish_lsp", {
+        capabilities = capabilities,
       })
 
       vim.lsp.enable("ruff")
