@@ -42,6 +42,7 @@ return {
           "json",
           "toml",
           "yaml",
+          "powershell",
         },
         indent = {
           enable = true,
