@@ -94,6 +94,8 @@ return {
         capabilities = capabilities,
       })
 
+      vim.lsp.enable("rubocop")
+
       vim.lsp.config("fish_lsp", {
         capabilities = capabilities,
       })
