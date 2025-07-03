@@ -43,6 +43,8 @@ return {
           "toml",
           "yaml",
           "powershell",
+          "svelte",
+          "vue",
         },
         indent = {
           enable = true,
