@@ -42,6 +42,8 @@ return {
           "json",
           "toml",
           "yaml",
+          "svelte",
+          "vue",
         },
         indent = {
           enable = true,
