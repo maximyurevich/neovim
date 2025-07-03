@@ -48,4 +48,12 @@ return {
     dependencies = { "kevinhwang91/promise-async" },
   },
   { "ellisonleao/dotenv.nvim", config = true },
+  {
+    "jiaoshijie/undotree",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = true,
+    keys = {
+      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
+    },
+  },
 }
