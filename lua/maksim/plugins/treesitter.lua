@@ -45,6 +45,7 @@ return {
           "powershell",
           "svelte",
           "vue",
+          "vim",
         },
         indent = {
           enable = true,
