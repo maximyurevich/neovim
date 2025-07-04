@@ -44,6 +44,8 @@ return {
           "yaml",
           "svelte",
           "vue",
+          "tmux",
+          "ruby",
         },
         indent = {
           enable = true,
