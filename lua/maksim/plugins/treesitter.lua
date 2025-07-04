@@ -46,6 +46,7 @@ return {
           "vue",
           "tmux",
           "ruby",
+          "vim",
         },
         indent = {
           enable = true,
