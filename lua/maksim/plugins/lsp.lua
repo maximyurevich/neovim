@@ -81,12 +81,16 @@ return {
           "marksman",
           "emmet_ls",
           "powershell_es",
+          "vue_ls",
+          "stylelint_lsp",
+          "eslint",
         },
       })
 
       vim.lsp.enable("ruff")
 
       vim.lsp.config("html", {
+        filetypes = { "html", "vue" },
         capabilities = capabilities,
       })
 
@@ -132,9 +136,7 @@ return {
         },
       })
 
-      vim.lsp.config("biome", {
-        root_markers = { "biome.json", "biome.jsonc" },
-      })
+      -- https://www.npmjs.com/package/@vue/typescript-plugin
 
       vim.lsp.config("ts_ls", {
         single_file_support = false,
@@ -144,8 +146,61 @@ return {
           "javascript",
           "javascriptreact",
           "typescriptreact",
+          "vue",
         },
-        root_markers = { "tsconfig.json", "jsconfig.json" },
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = "C:/nvm4w/nodejs/node_modules/node_modules/@vue/typescript-plugin",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
+      })
+
+      vim.lsp.config("cssmodules_ls", {
+        capabilities = capabilities,
+        filetypes = { "typescriptreact", "javascriptreact" },
+      })
+
+      vim.lsp.config("tailwindcss", {
+        capabilities = capabilities,
+        filetypes = {
+          "typescriptreact",
+          "javascriptreact",
+          "html",
+          "vue",
+          "css",
+        },
+      })
+
+      vim.lsp.config("stylelint_lsp", {
+        settings = {
+          stylelintplus = {
+            autoFixOnFormat = true,
+          },
+        },
+      })
+
+      vim.lsp.config("emmet_language_server", {
+        capabilities = capabilities,
+      })
+
+      local base_on_attach = vim.lsp.config.eslint.on_attach
+
+      vim.lsp.config("eslint", {
+        on_attach = function(client, bufnr)
+          if not base_on_attach then
+            return
+          end
+
+          base_on_attach(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "LspEslintFixAll",
+          })
+        end,
       })
 
       vim.lsp.config("pylsp", {
@@ -175,29 +230,10 @@ return {
 
       vim.lsp.config("marksman", { capabilities = capabilities })
 
-      vim.lsp.config("emmet_language_server", {
-        capabilities = capabilities,
-      })
-
       vim.lsp.config("dockerls", { capabilities = capabilities })
 
       vim.lsp.config("docker_compose_language_service", {
         capabilities = capabilities,
-      })
-
-      vim.lsp.config("cssmodules_ls", {
-        capabilities = capabilities,
-        filetypes = { "typescriptreact", "javascriptreact" },
-      })
-
-      vim.lsp.config("tailwindcss", {
-        capabilities = capabilities,
-        filetypes = {
-          "typescriptreact",
-          "javascriptreact",
-          "html",
-          "css",
-        },
       })
 
       require("ufo").setup()
