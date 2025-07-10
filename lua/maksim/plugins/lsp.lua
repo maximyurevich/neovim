@@ -79,7 +79,7 @@ return {
           "yamlls",
           "ts_ls",
           "marksman",
-          "emmet_ls",
+          "emmet_language_server",
           "powershell_es",
           "vue_ls",
           "stylelint_lsp",
