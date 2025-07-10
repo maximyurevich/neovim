@@ -79,7 +79,7 @@ return {
           "yamlls",
           "ts_ls",
           "marksman",
-          "emmet_ls",
+          "emmet_language_server",
           "bashls",
           "ruby_lsp",
           "fish_lsp",
@@ -168,7 +168,8 @@ return {
           plugins = {
             {
               name = "@vue/typescript-plugin",
-              location = "C:/nvm4w/nodejs/node_modules/node_modules/@vue/typescript-plugin",
+              location = os.getenv("HOME")
+                .. "/.local/share/nvm/v22.17.0/lib/node_modules/@vue/typescript-plugin",
               languages = { "javascript", "typescript", "vue" },
             },
           },
@@ -199,9 +200,7 @@ return {
         },
       })
 
-      vim.lsp.config("emmet_language_server", {
-        capabilities = capabilities,
-      })
+      vim.lsp.config("emmet_language_server", { capabilities = capabilities })
 
       local base_on_attach = vim.lsp.config.eslint.on_attach
 
@@ -251,6 +250,10 @@ return {
       vim.lsp.config("docker_compose_language_service", {
         capabilities = capabilities,
       })
+
+      vim.lsp.config("herb_ls", { capabilities = capabilities })
+
+      vim.lsp.config("turbo_ls", { capabilities = capabilities })
 
       require("ufo").setup()
 
