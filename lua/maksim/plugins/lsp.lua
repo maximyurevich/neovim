@@ -82,7 +82,6 @@ return {
           "emmet_language_server",
           "bashls",
           "ruby_lsp",
-          "fish_lsp",
           "vue_ls",
           "stylelint_lsp",
           "eslint",
@@ -90,18 +89,22 @@ return {
       })
 
       vim.lsp.config("bashls", {
+        filetypes = { "zsh", "sh" },
         capabilities = capabilities,
       })
 
       vim.lsp.config("ruby_lsp", {
         capabilities = capabilities,
+        init_options = {
+          addonSettings = {
+            ["Ruby LSP Rails"] = {
+              enablePendingMigrationsPrompt = false,
+            },
+          },
+        },
       })
 
       vim.lsp.enable("rubocop")
-
-      vim.lsp.config("fish_lsp", {
-        capabilities = capabilities,
-      })
 
       vim.lsp.enable("ruff")
 
@@ -250,8 +253,6 @@ return {
       vim.lsp.config("docker_compose_language_service", {
         capabilities = capabilities,
       })
-
-      vim.lsp.config("herb_ls", { capabilities = capabilities })
 
       vim.lsp.config("turbo_ls", { capabilities = capabilities })
 
