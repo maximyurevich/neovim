@@ -22,8 +22,7 @@ return {
             cwd = vim.fn.getcwd(),
             sourceMaps = true,
             protocol = "inspector",
-            runtimeExecutable = os.getenv("HOME")
-              .. "/AppData/Local/Chromium/Application/chrome.exe",
+            runtimeExecutable = os.getenv("HOME") .. "/usr/bin/ungoogled-chromium",
             port = 9222,
             webRoot = "${workspaceFolder}",
           },
