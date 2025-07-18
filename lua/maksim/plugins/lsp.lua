@@ -81,7 +81,6 @@ return {
           "marksman",
           "emmet_language_server",
           "bashls",
-          "ruby_lsp",
           "vue_ls",
           "stylelint_lsp",
           "eslint",
@@ -92,19 +91,6 @@ return {
         filetypes = { "zsh", "sh" },
         capabilities = capabilities,
       })
-
-      vim.lsp.config("ruby_lsp", {
-        capabilities = capabilities,
-        init_options = {
-          addonSettings = {
-            ["Ruby LSP Rails"] = {
-              enablePendingMigrationsPrompt = false,
-            },
-          },
-        },
-      })
-
-      vim.lsp.enable("rubocop")
 
       vim.lsp.enable("ruff")
 

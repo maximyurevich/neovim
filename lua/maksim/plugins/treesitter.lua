@@ -45,8 +45,6 @@ return {
           "svelte",
           "vue",
           "tmux",
-          "ruby",
-          "embedded_template",
           "vim",
         },
         indent = {
