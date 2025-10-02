@@ -9,12 +9,6 @@ return {
     end,
   },
   {
-    "tpope/vim-obsession",
-  },
-  {
-    "tpope/vim-fugitive",
-  },
-  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
